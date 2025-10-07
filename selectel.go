@@ -1,15 +1,15 @@
 package selectel
 
 import (
-	// "fmt"
+    // "fmt"
 
-	"github.com/caddyserver/caddy/v2"
-	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/libdns/selectel"
+    "github.com/caddyserver/caddy/v2"
+    "github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+    selectel_libdns "github.com/WEBzaytsev/selectel-libdns"
 )
 
 // Provider lets Caddy read and manipulate DNS records hosted by this DNS provider.
-type Provider struct{ *selectel.Provider }
+type Provider struct{ *selectel_libdns.Provider }
 
 func init() {
 	caddy.RegisterModule(Provider{})
@@ -19,7 +19,7 @@ func init() {
 func (Provider) CaddyModule() caddy.ModuleInfo {
 	return caddy.ModuleInfo{
 		ID:  "dns.providers.selectel",
-		New: func() caddy.Module { return &Provider{new(selectel.Provider)} },
+        New: func() caddy.Module { return &Provider{new(selectel_libdns.Provider)} },
 	}
 }
 

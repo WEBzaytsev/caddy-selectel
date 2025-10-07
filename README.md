@@ -57,4 +57,12 @@ tls {
 
 Selectel [Service user](https://my.selectel.ru/iam/users_management/users?type=service) management
 
-Always yours [@jjazzme](https://github.com/jjazzme)
+
+## Fork & Credits
+
+This repository is a fork of:
+
+- [jjazzme/selectelv2-caddy](https://github.com/jjazzme/selectelv2-caddy)
+- [caddy-dns/selectel](https://github.com/caddy-dns/selectel)
+
+Special thanks to [@jjazzme](https://github.com/jjazzme) for the original work and idea.
