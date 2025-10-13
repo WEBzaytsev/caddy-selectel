@@ -29,6 +29,15 @@ func (p *Provider) Provision(ctx caddy.Context) error {
 	p.Provider.Password = caddy.NewReplacer().ReplaceAll(p.Provider.Password, "")
 	p.Provider.AccountId = caddy.NewReplacer().ReplaceAll(p.Provider.AccountId, "")
 	p.Provider.ProjectName = caddy.NewReplacer().ReplaceAll(p.Provider.ProjectName, "")
+	
+	// Enable debug logging for selectel-libdns
+	p.Provider.EnableDebugLogging = true
+	
+	// Initialize zones cache
+	if p.Provider.ZonesCache == nil {
+		p.Provider.ZonesCache = make(map[string]string)
+	}
+	
 	return nil
 }
 

@@ -35,10 +35,10 @@ or with the Caddyfile:
 # globally
 {
 	acme_dns selectel {
-		user <SELECTEL_USER>
-		password <SELECTEL_PASSWORD>
-		account_id <SELECTEL_ACCOUNT_ID>
-		project_name <SELECTEL_PROJECT_NAME>
+		user {env.SELECTEL_USER}
+		password {env.SELECTEL_PASSWORD}
+		account_id {env.SELECTEL_ACCOUNT_ID}
+		project_name {env.SELECTEL_PROJECT_NAME}
 	}
 }
 ```
@@ -47,13 +47,15 @@ or with the Caddyfile:
 # one site
 tls {
 	dns selectel {
-		user <SELECTEL_USER>
-		password <SELECTEL_PASSWORD>
-		account_id <SELECTEL_ACCOUNT_ID>
-		project_name <SELECTEL_PROJECT_NAME>
+		user {env.SELECTEL_USER}
+		password {env.SELECTEL_PASSWORD}
+		account_id {env.SELECTEL_ACCOUNT_ID}
+		project_name {env.SELECTEL_PROJECT_NAME}
 	}
 }
 ```
+
+**Note:** Debug logging is enabled by default. All DNS operations from `selectel-libdns` will appear in Caddy logs.
 
 Selectel [Service user](https://my.selectel.ru/iam/users_management/users?type=service) management
 
