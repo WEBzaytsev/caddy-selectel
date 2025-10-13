@@ -3,7 +3,7 @@ module github.com/WEBzaytsev/caddy-selectel
 go 1.25
 
 require (
-	github.com/WEBzaytsev/selectel-libdns v1.7.9
+	github.com/WEBzaytsev/selectel-libdns v1.8.0
 	github.com/caddyserver/caddy/v2 v2.10.2
 )
 
